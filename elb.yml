@@ -36,7 +36,7 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       CidrBlock: 10.0.1.0/24
-      AvailabilityZone: ap-south-2a
+      AvailabilityZone: ap-south-1a
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -48,7 +48,7 @@ Resources:
       VpcId: !Ref VPC
       CidrBlock: 10.0.2.0/24
       MapPublicIpOnLaunch: false
-      AvailabilityZone: ap-south-2a
+      AvailabilityZone: ap-south-1a
       Tags:
         - Key: Name
           Value: Private Subnet 1
@@ -58,7 +58,7 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       CidrBlock: 10.0.3.0/24
-      AvailabilityZone: ap-south-2b
+      AvailabilityZone: ap-south-1b
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -69,7 +69,7 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       CidrBlock: 10.0.4.0/24
-      AvailabilityZone: ap-south-2b
+      AvailabilityZone: ap-south-1b
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -215,3 +215,4 @@ Resources:
       - !Ref PublicSubnet2
       SecurityGroups:
         - !GetAtt ELBSecurityGroup.GroupId
+    DependsOn: AttachGateway
