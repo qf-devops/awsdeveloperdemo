@@ -106,7 +106,7 @@ Resources:
   Service2:
     Type: AWS::ECS::Service
     Properties:
-      ServiceName: deployment-exmaple-service
+      ServiceName: deployment-exmaple-service2
       Cluster: !Ref Cluster
       TaskDefinition: !Ref TaskDefinition2
       DesiredCount: 1
@@ -117,4 +117,4 @@ Resources:
           Subnets:
             - !Ref SubnetID
           SecurityGroups:
-            - !GetAtt ContainerSecurityGroup.GroupId
+            - !GetAtt NginxContainerSecurityGroup.GroupId
