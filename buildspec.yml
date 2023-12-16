@@ -16,7 +16,10 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
-      - docker build --tag $REPOSITORY_URI:$TAG app 
+      - cd app && docker build --tag web .
+      - docker tag docker.io/library/web $REPOSITORY_URI:$TAG  
+      - docker images
+      - cd ..
 
   post_build:
     commands:
